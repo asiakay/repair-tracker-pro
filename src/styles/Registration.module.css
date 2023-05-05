@@ -1,0 +1,64 @@
+.registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.registration form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+}
+
+.registration label {
+  margin-top: 1rem;
+}
+
+.registration input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.registration button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #0070f3;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.googleSignUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.registrationButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .registration {
+    flex-direction: row;
+  }
+
+  .registration form {
+    margin-right: 1rem;
+  }
+}

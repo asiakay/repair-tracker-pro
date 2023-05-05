@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { auth, googleAuthProvider, signInWithPopup } from "../lib/firebaseClient"
+import { auth, googleAuthProvider, createUserWithEmailAndPassword } from "../lib/firebaseClient"
+import { Form, Button } from 'react-bootstrap';
+import styles from "../styles/Registration.module.css";
+import SignInSignOutButton from "../components/SignInSignOutButton";
 
 const RegistrationPage = () => {
   const [email, setEmail] = useState("");
@@ -9,7 +12,7 @@ const RegistrationPage = () => {
 
   const handleGoogleSignUp = async () => {
     try {
-      await signInWithPopup(auth, googleAuthProvider);
+      await auth.signInWithPopup(googleAuthProvider);
     } catch (error) {
       console.error(error);
       setErrorMessage(error.message);
@@ -23,43 +26,63 @@ const RegistrationPage = () => {
       return;
     }
     try {
-      await auth.createUserWithEmailAndPassword(email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
     } catch (error) {
-        console.error(error);
+      console.error(error);
       setErrorMessage(error.message);
     }
   };
 
   return (
-    <div>
+    <>
       <h1>Registration Page</h1>
-      <button onClick={handleGoogleSignUp}>Sign up with Google</button>
-      <form onSubmit={handleRegistration}>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <label htmlFor="confirm-password">Confirm Password</label>
-        <input
-          type="password"
-          id="confirm-password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <button type="submit">Register</button>
-      </form>
-      {errorMessage && <p>{errorMessage}</p>}
-    </div>
+        <div className={styles.registration}>
+        <Form onSubmit={handleRegistration}>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicConfirmPassword">
+            <Form.Label>Confirm Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </Form.Group>
+<Form.Group>
+          <Button variant="primary" type="submit">
+            Register
+          </Button>
+          </Form.Group>
+          <Form.Group>
+          <SignInSignOutButton />
+</Form.Group>
+        </Form>
+        </div>
+        <div className={styles.googleSignUp}>
+          <label htmlFor="signupwithgoogle">Sign up with Google</label>
+    
+{/*       {errorMessage && <p>{errorMessage}</p>}
+ */}    </div>
+    </>
   );
 };
 

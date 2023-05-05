@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { auth, googleAuthProvider } from "../lib/firebaseClient"
-
-
+import styles from "../styles/Login.module.css";
+import SignInSignOutButton from "../components/SignInSignOutButton";
+import { Button } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,32 +26,126 @@ const LoginPage = () => {
     } catch (error) {
         console.log(error);
     }
-};
+  };
 
   return (
-    <div>
+    <>
       <h1>Login Page</h1>
-        <button onClick={handleGoogleLogin}>Login with Google</button>
-      <form onSubmit={handleLogin}>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
+      <div className={styles.login}>
+      <Form onSubmit={handleLogin}>
+    {/*   <Form.Group controlId="formBasicName">
+        <Form.Label>Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Enter name"
           value={email}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </Form.Group> */}
+
+      <Form.Group controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control
+          type="email"
+          placeholder="Enter email"
+        value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label htmlFor="password">Password</label>
-        <input
+     
+      </Form.Group>
+
+      <Form.Group controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control
           type="password"
-          id="password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
-      </form>
+      </Form.Group>
+
+<Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+      </Form.Group>
+       <Form.Group>
+                <SignInSignOutButton />
+       </Form.Group>
+    </Form>
+        </div>
+    </>
+  );
+};
+
+
+
+export default LoginPage;
+
+
+{/* 
+      <Form>
+        
+
+
+        
+        <Form.Group 
+        as={Row} 
+        controlId="formBasicEmail"
+        className="mb-3"eê >
+          <Form.Label
+          column sm={2}>
+            Email address
+            </Form.Label>
+             <Col sm={10}>
+          
+          <Form.Control 
+            type="email" 
+            placeholder="Enter email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+            </Col>
+            </Form.Group>
+            <Form.Group 
+            as={Row} 
+            className="mb-3" 
+            controlId="password"
+            >
+            <Form.Label >
+            Password
+            </Form.Label>
+            <Col sm={10}>
+            <Form.Control
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            />
+            </Col>
+            </Form.Group>
+            <Form.Group>
+        
+        </Form.Group>
+
+        <Form.Group as={Row} className="mb-3">
+        <Col sm={{ span: 10, offset: 2 }}>
+          <Button type="submit">Sign in</Button>
+        </Col>
+      </Form.Group>
+
+   
+      </Form>
+      <Row>
+        <Col>
+      <SignInSignOutButton />
+        </Col>
+        </Row>
+      </div>
       {errorMessage && <p>{errorMessage}</p>}
-    </div>
+    </>
   );
 };
 
 export default LoginPage;
+ */}
