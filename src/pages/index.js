@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import SignInOutButton from '@/components/SignInSignOutButton'
 import HeroSection from '@/components/HeroSection'
+import FeaturesSection from '@/components/FeaturesSection'
 //import { initializeApp } from 'firebase/app';
 // import { initFirebaseAuth } from '@/lib/auth';
 /* import {
@@ -55,6 +56,7 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         <HeroSection />
+        <FeaturesSection />
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
