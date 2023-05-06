@@ -1,0 +1,24 @@
+.screenshots-section {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.screenshot-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.screenshot-item img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.screenshot-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}

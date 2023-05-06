@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Image from 'next/image';
+import styles from '../styles/HeroSection.module.css';
 
 const HeroSection = () => {
   return (
-    <div className="hero-section">
+    <div className={styles['hero-section']}>
       <Image 
       src="/logo.png" 
       alt="Repair Tracker Pro logo"

@@ -5,6 +5,9 @@ import styles from '@/styles/Home.module.css'
 import SignInOutButton from '@/components/SignInSignOutButton'
 import HeroSection from '@/components/HeroSection'
 import FeaturesSection from '@/components/FeaturesSection'
+import ScreenshotsSection from '@/components/ScreenshotsSection'
+import Layout from '@/components/Layout'
+import VisualizationCharts from '@/components/VisualizationCharts'
 //import { initializeApp } from 'firebase/app';
 // import { initFirebaseAuth } from '@/lib/auth';
 /* import {
@@ -54,9 +57,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Layout>
       <div className={styles.container}>
+      
         <HeroSection />
+        <VisualizationCharts />
+
         <FeaturesSection />
+        <ScreenshotsSection />
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
@@ -162,6 +170,8 @@ export default function Home() {
         </div>
       </main>
       </div>
+      </Layout>
     </>
+ 
   )
 }

@@ -1,0 +1,54 @@
+.repair-request-form {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.repair-request-form h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-group select {
+  appearance: none;
+  padding-right: 2rem;
+  background-image: url("/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.submit-button {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #0070f3;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0060cc;
+}
