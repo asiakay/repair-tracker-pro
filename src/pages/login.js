@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { auth, googleAuthProvider } from "../lib/firebaseClient"
+import { auth, GoogleAuthProvider } from "../lib/firebaseClient"
 import styles from "../styles/Login.module.css";
 import SignInSignOutButton from "../components/SignInSignOutButton";
 import { Button } from 'react-bootstrap';
@@ -14,7 +14,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await auth.signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
       setErrorMessage(error.message);
     }
@@ -22,7 +22,7 @@ const LoginPage = () => {
 
   const handleGoogleLogin = async () => {
     try {
-        await auth.signInWithPopup(googleAuthProvider);
+        await signInWithPopup(auth, GoogleAuthProvider);
     } catch (error) {
         console.log(error);
     }
