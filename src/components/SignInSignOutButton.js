@@ -59,7 +59,7 @@ useEffect(() => {
   if (user) {
     router.push("/"); // Redirect to home page
   }
-}, [user]);
+}, [user, router]);
 
   const handleLogout = async () => {
     try {
