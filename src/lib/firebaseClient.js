@@ -1,9 +1,12 @@
 // require('dotenv').config();
-
+import { initializeApp } from "firebase/app";
+import "firebase/auth";
+import firebase from "firebase/app";
 // Import the functions you need from the SDKs you need
- import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
- import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword } from "firebase/auth";
+ 
+ // import { getAuth } from "firebase/auth";
  import { getFirestore, Timestamp } from 'firebase/firestore';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -11,7 +14,8 @@
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
- const firebaseConfig = {
+
+const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
     databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
@@ -20,22 +24,34 @@
     messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
-  };
+};
 
-/*  function getFirebaseConfig() {
-    if (!config || !config.apiKey) {
-      throw new Error('No Firebase configuration object provided.' + '\n' +
-      'Add your web app\'s configuration object to firebase.js');
-    } else {
-      return config;
-    }
-  } */
+const app = initializeApp(firebaseConfig);
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
-  const firestore = getFirestore(app);
+/* if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+} */
 
-  const googleProvider = new GoogleAuthProvider();
+// Initialize Firebase
+ const auth = getAuth(app);
 
-  export { db, firestore, app, auth, googleProvider, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithPopup, Timestamp };
+// Initialize Firebase Authentication and get a reference to the service
+ const db = getFirestore(app);
+
+const googleProvider = new GoogleAuthProvider();
+
+export {
+  auth,
+    db,
+    firebase,
+    getFirestore,
+    getAuth,
+    googleProvider,
+    GoogleAuthProvider,
+    signOut,
+    onAuthStateChanged,
+    createUserWithEmailAndPassword,
+    signInWithPopup,
+    Timestamp
+};
+

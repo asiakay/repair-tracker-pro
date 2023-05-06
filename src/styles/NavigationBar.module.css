@@ -7,7 +7,8 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-brand {
+/* Navbar brand */
+/* .navbar-brand {
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -21,12 +22,17 @@
   color: #000;
   text-decoration: none;
   font-size: 1.5rem;
-}
+} */
 
+/* Navbar links full screen div */
 .navbar-links {
   display: flex;
 }
 
+/* .show {
+  display: block;
+}
+ */
 .navbar-link {
   color: #000;
   text-decoration: none;
@@ -34,6 +40,211 @@
   font-size: 1.2rem;
 }
 
-.navbar-link:hover {
+/* .navbar-link:hover {
   text-decoration: underline;
+} */
+
+/* .mobile-menu-hidden {
+  display: none;
+} */
+
+/* .mobile-menu-link {
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+} */
+
+@media only screen and (min-width: 768px) {
+  /*   .hamburger-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+  }
+
+  .hamburger-icon svg {
+    width: 20px;
+    height: 20px;
+  } */
+
+  /*  .navbar-links {
+    display: flex;
+    flex-direction: row;
+  } */
+
+  /*   .navbar-link {
+    margin-right: 1rem;
+    margin-bottom: 0;
+  } */
+
+  /* .hamburger-icon,
+  .navbar-links .hamburger-icon {
+    display: none;
+  } */
 }
+
+@media only screen and (max-width: 767px) {
+  /*   .navbar-links {
+    display: none;
+  } */
+
+  /*   .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  } */
+
+  /*   .mobile-menu-link {
+    display: block;
+    text-align: center;
+    color: #000;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  } */
+
+  /*   .hamburger-icon,
+  .navbar-links .hamburger-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+  } */
+
+  /*   .hamburger-icon svg {
+    width: 20px;
+    height: 20px;
+  } */
+
+  /*   .show {
+    display: block;
+  } */
+
+  /*   .navbar-link {
+    display: block;
+    text-align: center;
+  } */
+
+  /*  .navbar-link:last-child {
+    margin-bottom: 0;
+  } */
+}
+
+/* @media only screen and (max-width: 576px) { */
+/*   .navbar-brand-link {
+    font-size: 1.2rem;
+  }
+
+  .navbar-link {
+    font-size: 1rem;
+  }
+
+  .mobile-menu-link {
+    font-size: 1rem;
+  } */
+/*  .navbar-brand-link {
+    font-size: 1.2rem;
+  }
+
+  .navbar-link {
+    font-size: 1rem;
+  }
+
+  .mobile-menu-link {
+    font-size: 1rem;
+  } */
+
+/* ---------------------------------------------- */
+/* Path: src/styles/NavigationBar.module.css */
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/* nav sm screen // state value={showMenu} */
+/* ---------------------------------------------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------- */
+/* Navbar div sm screen */
+/* ---------------------------------------------- */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* hides this div on mobile screens */
+.navbar-links {
+  display: none;
+}
+
+/* ---------------------------------------------- */
+/* Idk if neeeded, test */
+/* ---------------------------------------------- */
+/*   .hamburger-icon {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+  }
+
+  .hamburger-icon svg {
+    width: 20px;
+    height: 20px;
+  } */
+
+/* Navbar brand mobile sm */
+.navbar-brand img {
+  margin-right: 0.5rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.navbar-brand-link {
+  color: #000;
+  text-decoration: none;
+  font-size: 1 rem;
+}
+
+.mobile-menu-link {
+  display: block;
+  text-align: center;
+  color: #000;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  text-decoration: none;
+}
+/* } */

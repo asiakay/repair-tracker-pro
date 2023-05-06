@@ -1,13 +1,14 @@
-import Head from 'next/head'
+import Head from 'next/head' 
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import SignInOutButton from '@/components/SignInSignOutButton'
+// import SignInOutButton from '@/components/SignInSignOutButton'
 import HeroSection from '@/components/HeroSection'
 import FeaturesSection from '@/components/FeaturesSection'
 import ScreenshotsSection from '@/components/ScreenshotsSection'
 import Layout from '@/components/Layout'
 import VisualizationCharts from '@/components/VisualizationCharts'
+import Footer from '@/components/Footer'
 //import { initializeApp } from 'firebase/app';
 // import { initFirebaseAuth } from '@/lib/auth';
 /* import {
@@ -46,7 +47,7 @@ initializeApp(firebaseConfig); */
 //initFirebaseAuth();
 
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -65,9 +66,11 @@ export default function Home() {
 
         <FeaturesSection />
         <ScreenshotsSection />
+        <Footer />
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
+       <div className={styles.description}>
+         {/*  
+         <p>
             Get started by editing&nbsp;
            <SignInOutButton />
           </p>
@@ -166,7 +169,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a shareable URL
               with&nbsp;Vercel.
             </p>
-          </a>
+          </a> */}
         </div>
       </main>
       </div>

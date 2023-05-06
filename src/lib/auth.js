@@ -1,5 +1,5 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { handleAuthenticatedUser, handleUnauthenticatedUser } from "./auth"
+/* import { getAuth, onAuthStateChanged } from "firebase/auth";
+// import { handleAuthenticatedUser, handleUnauthenticatedUser } from "./auth"
 
 export function initFirebaseAuth() {
     const auth = getAuth();
@@ -10,4 +10,4 @@ export function initFirebaseAuth() {
             handleUnauthenticatedUser();
         }
     });
-}
+} */

@@ -24,14 +24,18 @@ export default function SignInOutButton() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const provider = new GoogleAuthProvider();
-      provider.setCustomParameters({ prompt: "select_account" });
-      const result = await signInWithPopup(auth, provider);
-      const { user } = result;
-      if (user) {
-        await handleUserLogin(user);
-        router.push("/");
+    try { // Sign in with Google
+      const provider = new GoogleAuthProvider(); // Set provider to Google
+      provider.setCustomParameters({ prompt: "select_account" }); // Always prompt user to select account
+      const result = // Sign in user
+      await signInWithPopup( // 
+        auth, // the auth object from firebase
+        provider // google auth provider
+        ); // this function returns a promise, so we need to use await to wait for the promise to resolve
+      const { user } = result; // Get user from result
+      if (user) { // If user exists
+        await handleUserLogin(user); // return user
+        router.push("/status"); // Redirect to home page
       }
     } catch (error) {
       setError(error.message);
@@ -50,6 +54,12 @@ export default function SignInOutButton() {
     // Unsubscribe to the listener when unmounting
     return () => unsubscribe();
   }, []);
+
+useEffect(() => {
+  if (user) {
+    router.push("/"); // Redirect to home page
+  }
+}, [user]);
 
   const handleLogout = async () => {
     try {

@@ -6,27 +6,41 @@ import { Button } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import { useRouter } from "next/router";
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (error) {
-      setErrorMessage(error.message);
+const router = useRouter();
+
+  const handleLogin = async (e) => { // this is the function that will be called when the user clicks the login button
+    e.preventDefault(); // prevent the default form submit behavior
+
+    try { // try to create the user with the email and password
+      await signInWithEmailAndPassword( // this is a function from firebase that will create the user
+        auth, // the auth object from firebase
+        email, // the email the user typed in the form
+        password // the password the user typed in the form
+        ); // this function returns a promise, so we need to use await to wait for the promise to resolve
+        router.push("/"); // redirect to the home page
+    } catch (error) { // if there was an error creating the user, we catch the error and update the error message in state
+      setErrorMessage(error.message); // update the error message in state
     }
   };
 
-  const handleGoogleLogin = async () => {
-    try {
-        await signInWithPopup(auth, GoogleAuthProvider);
-    } catch (error) {
-        console.log(error);
+  /* handled in SignInSignOutComponent */
+/*   const handleGoogleLogin = async () => { // this is the function that will be called when the user clicks the login button
+    try { // try to create the user with the email and password 
+        await signInWithPopup( // this is a function from google that will create the user
+            auth, // the auth object from firebase
+            GoogleAuthProvider // google auth provider
+            ); // this function returns a promise, so we need to use await to wait for the promise to resolve
+    } catch (error) { // if there was an error creating the user, we catch the error and update the error message in state
+        console.log(error); // update the error message in state
     }
-  };
+  }; */
 
   return (
     <>
