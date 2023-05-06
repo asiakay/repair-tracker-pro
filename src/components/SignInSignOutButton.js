@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {  GoogleAuthProvider } from "firebase/auth";
 import { signInWithPopup, signOut } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth, db } from "../lib/firebaseClient";
+import { auth, db, googleAuthProvider } from "../lib/firebaseClient";
 import { useRouter } from "next/router";
 import { addUserToFirestore } from "../lib/userUtils";
 import { getDoc, doc } from "firebase/firestore";

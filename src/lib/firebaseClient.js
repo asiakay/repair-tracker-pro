@@ -38,4 +38,4 @@
 
   const googleProvider = new GoogleAuthProvider();
 
-  export { firestore, app, auth, googleProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithPopup, Timestamp };
+  export { db, firestore, app, auth, googleProvider, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithPopup, Timestamp };
