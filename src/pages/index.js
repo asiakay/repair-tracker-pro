@@ -59,16 +59,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
 
       </Head>
-      <Layout>
+{/*       <Layout> */}
       <div className={styles.container}>
-      
+      <main className={styles.main}>
         <HeroSection />
         <VisualizationCharts />
 
         <FeaturesSection />
         <ScreenshotsSection />
         <Footer />
-      <main className={styles.main}>
+    
        <div className={styles.description}>
          {/*  
          <p>
@@ -174,7 +174,7 @@ export default function Home() {
         </div>
       </main>
       </div>
-      </Layout>
+   {/*    </Layout> */}
     </>
  
   )

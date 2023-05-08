@@ -28,3 +28,9 @@
 .cta-button:hover {
   background-color: #0089b5;
 }
+
+.hero-section-image {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 1rem;
+}

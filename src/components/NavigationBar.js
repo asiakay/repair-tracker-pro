@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styles from '../styles/NavigationBar.module.css';
+
+
 const NavigationBar = () => {
   const [showMenu, setShowMenu] = useState(false);
 

@@ -14,6 +14,7 @@ const HeroSection = () => {
       alt="Repair Tracker Pro logo"
       width="200"
         height="200"
+        className={styles['hero-section-image']}
       />
       <h1>Efficiently track and manage all repairs for your retail store</h1>
       <Link href="/register">
