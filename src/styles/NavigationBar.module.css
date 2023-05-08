@@ -1,11 +1,11 @@
-.navbar {
+/* .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Navbar brand */
 /* .navbar-brand {
@@ -34,7 +34,7 @@
 }
  */
 .navbar-link {
-  color: #000;
+  /*  color: #000; */
   text-decoration: none;
   margin-right: 1rem;
   font-size: 1.2rem;
@@ -172,13 +172,13 @@
 /* ---------------------------------------------- */
 
 /* ---------------------------------------------- */
-/* nav sm screen // state value={showMenu} */
+/* NAV SMALL SCRN // state value={showMenu} */
 /* ---------------------------------------------- */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
+  background-color: var(--primary);
   padding: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -189,7 +189,7 @@
 .mobile-menu {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  /* background-color: #fff; */
   position: absolute;
   top: 4rem;
   left: 0;
@@ -199,10 +199,28 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* hides this div on mobile screens */
-.navbar-links {
-  display: none;
+.mobilemenulink {
+  display: block;
+  padding: var(--spacing-medium);
+  color: var(--secondary);
+  font-size: var(--font-size-large);
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-2);
 }
+
+.mobile-menu-link:hover {
+  color: var(--primary-dark);
+}
+
+/* .mobile-menu-hidden {
+  display: none;
+} */
+
+/* hides this div on mobile screens */
+/* .navbar-links {
+  display: none;
+} */
 
 /* ---------------------------------------------- */
 /* Idk if neeeded, test */
@@ -238,13 +256,4 @@
   font-size: 1 rem;
 }
 
-.mobile-menu-link {
-  display: block;
-  text-align: center;
-  color: #000;
-  font-size: 1.2rem;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  text-decoration: none;
-}
 /* } */

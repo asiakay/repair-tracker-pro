@@ -3,8 +3,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styles from '../styles/NavigationBar.module.css';
-import { FaBars } from 'react-icons/fa';
-
 const NavigationBar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -18,6 +16,8 @@ const NavigationBar = () => {
       const toggleMenu = () => {
         setShowMenu(!showMenu);
       };
+
+
 
   return (
     <nav 
@@ -33,12 +33,12 @@ const NavigationBar = () => {
         alt="Repair Tracker Pro" 
         width={30} height={30} 
         />
-        <Link 
+   {/*      <Link 
         href="/" 
         className={
           styles['navbar-brand-link']}
           >Repair Tracker Pro
-        </Link>
+        </Link> */}
       </div>
 
 
@@ -46,30 +46,33 @@ const NavigationBar = () => {
         styles['navbar-links']}>
 
 {/* navbar-link = not for small screen */}
-        <Link 
+   {/*      <Link 
         href="/" 
         className={
           styles['navbar-link']}
           >Home
-        </Link>
+        </Link> */}
 
-        <Link 
+    {/*     <Link 
         href="/repair-list" 
         className={styles['navbar-link']}
         >Repairs
-        </Link>
+        </Link> */}
 
-        <Link 
+  {/*       <Link 
         href="/new-repair-request"
         className={styles['navbar-link']}
         >New Request
-        </Link>
+        </Link> */}
 
-        <Link 
+ {/*        <Link 
         href="/login" 
         className={styles['navbar-link']}
         >Login
-        </Link>
+        </Link> */}
+
+
+
 
     {/*     <button 
         className={styles['hamburger-icon']} 
@@ -89,33 +92,33 @@ const NavigationBar = () => {
       : styles['mobile-menu-hidden']}
       >
 
-      <Link 
+{/*       <Link 
       href="/" 
       className={
         styles['mobile-menu-link']}
         >
 Home
-        </Link>
+        </Link> */}
         <Link 
         href="/repair-list" 
         className={
-          styles['mobile-menu-link']}>
+        styles['mobile-menu-link']}          >
 Repairs
         </Link>
-        <Link 
+{/*         <Link 
         href="/new-repair-request" 
         className={
           styles['mobile-menu-link']}
           >
 New Request
-        </Link>
-        <Link 
+        </Link> */}
+{/*         <Link 
         href="/login" 
         className={
           styles['mobile-menu-link']}
           >
 Login
-        </Link>
+        </Link> */}
       </div>
 
     </nav>
