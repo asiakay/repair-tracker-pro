@@ -1,6 +1,9 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
 import styles from '../styles/VisualizationCharts.module.css';
+import GoogleChartsWrapper from '@/hoc/GoogleChartsWrapper';
+
+
 const VisualizationCharts = () => {
   const data = [
     ['Repair Type', 'Number of Repairs'],
@@ -19,7 +22,8 @@ const VisualizationCharts = () => {
   return (
     <div className={styles["visualization-charts"]}>
       <h2>Repair Distribution</h2>
-      <Chart
+      <GoogleChartsWrapper 
+  
         chartType="PieChart"
         data={data}
         options={options}

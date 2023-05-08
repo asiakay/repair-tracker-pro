@@ -1,13 +1,14 @@
-// require('dotenv').config();
 import { initializeApp } from "firebase/app";
 import "firebase/auth";
-import firebase from "firebase/app";
+// import firebase from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 // Import the functions you need from the SDKs you need
-// import { getAnalytics } from "firebase/analytics";
-import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup  
+} from "firebase/auth";
+// import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword } from "firebase/auth";
  
  // import { getAuth } from "firebase/auth";
- import { getFirestore, Timestamp } from 'firebase/firestore';
+ import { getFirestore, Timestamp } from 'firebase/firestore';  
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -26,24 +27,42 @@ const firebaseConfig = {
     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-const app = initializeApp(firebaseConfig);
+
+
+// const app = initializeApp(firebaseConfig);
+let app;
+let db;
+let analytics;
+let googleProvider;
+let auth;
+
+if (typeof window !== "undefined") {
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  db = getFirestore(app);
+  analytics = getAnalytics(app);
+  googleProvider = new GoogleAuthProvider();
+}
+
+
 
 /* if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 } */
 
 // Initialize Firebase
- const auth = getAuth(app);
+ //
 
+
+
+ 
 // Initialize Firebase Authentication and get a reference to the service
- const db = getFirestore(app);
-
-const googleProvider = new GoogleAuthProvider();
+// db = getFirestore(app);
 
 export {
+  app,
   auth,
     db,
-    firebase,
     getFirestore,
     getAuth,
     googleProvider,
@@ -52,6 +71,7 @@ export {
     onAuthStateChanged,
     createUserWithEmailAndPassword,
     signInWithPopup,
-    Timestamp
+    Timestamp,
+    analytics
 };
 
