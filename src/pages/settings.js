@@ -4,7 +4,6 @@ import styles from '../styles/SettingsPage.module.css';
 
 const SettingsPage = () => {
   return (
-    <Layout>
       <div className={styles["settingsPage"]}>
         <h2 className={styles["settingsPage"]}>Settings</h2>
         <form className={styles["settingsPage"]}>
@@ -28,7 +27,6 @@ const SettingsPage = () => {
           <button type="submit" className={styles["settingsPage"]}>Save Changes</button>
         </form>
       </div>
-    </Layout>
   );
 };
 

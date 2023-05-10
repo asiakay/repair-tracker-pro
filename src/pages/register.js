@@ -46,7 +46,6 @@ const RegistrationPage = () => {
 
   return (
     <>
-      <h1>Registration Page</h1>
         <div className={styles.registration}>
         <Form onSubmit={handleRegistration}>
         <Form.Group controlId="formBasicEmail">

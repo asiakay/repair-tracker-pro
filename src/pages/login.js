@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { auth, GoogleAuthProvider } from "../lib/firebaseClient"
+import { auth } from "../lib/firebaseClient";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import styles from "../styles/Login.module.css";
 import SignInSignOutButton from "../components/SignInSignOutButton";
 import { Button } from 'react-bootstrap';
@@ -7,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { useRouter } from "next/router";
+//import { useAuth } from "@/hooks/useAuth";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -14,16 +16,12 @@ const LoginPage = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
 const router = useRouter();
-
+//const { login } = useAuth();
   const handleLogin = async (e) => { // this is the function that will be called when the user clicks the login button
     e.preventDefault(); // prevent the default form submit behavior
 
     try { // try to create the user with the email and password
-      await signInWithEmailAndPassword( // this is a function from firebase that will create the user
-        auth, // the auth object from firebase
-        email, // the email the user typed in the form
-        password // the password the user typed in the form
-        ); // this function returns a promise, so we need to use await to wait for the promise to resolve
+     await signInWithEmailAndPassword(auth, email, password); // this is a function from firebase that will create the user
         router.push("/"); // redirect to the home page
     } catch (error) { // if there was an error creating the user, we catch the error and update the error message in state
       setErrorMessage(error.message); // update the error message in state
@@ -44,7 +42,6 @@ const router = useRouter();
 
   return (
     <>
-      <h1>Login Page</h1>
       <div className={styles.login}>
       <Form onSubmit={handleLogin}>
     {/*   <Form.Group controlId="formBasicName">
@@ -85,7 +82,10 @@ const router = useRouter();
       </Form.Group>
        <Form.Group>
                 <SignInSignOutButton />
+
        </Form.Group>
+       {errorMessage && <p className="error">{errorMessage}</p>}
+
     </Form>
         </div>
     </>

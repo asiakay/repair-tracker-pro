@@ -23,9 +23,7 @@ function MyApp ({ Component, pageProps }) {
   return (
     <AuthProvider> {/* // AuthProvider is a component that is shared across all the pages of your application. */}
       <Layout // Layout is a component that is shared across all the pages of your application.
-      color={
-        variables.primaryColor // Layout component is wrapped around the Component to be rendered and it can pass props to it. Color is a prop passed to Layout component from _app.js
-        }>
+      >
 
       <Component // Component is the current page being rendered by Next.js 
       {
