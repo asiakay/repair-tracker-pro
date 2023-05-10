@@ -30,10 +30,10 @@ const NavigationBar = () => {
             className="d-inline-block align-top"
           />{' '}
           Repair Tracker Pro
-        </Navbar.Brand>
+        </Navbar.Brand> 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
+         {/*  <Nav>
             <Nav.Link as={Link} href="/" passHref>
               Home
             </Nav.Link>
@@ -46,11 +46,13 @@ const NavigationBar = () => {
             <Nav.Link as={Link} href="/login" passHref>
               Login
             </Nav.Link>
-          </Nav>
+          </Nav> */}
         </Navbar.Collapse>
+
         <Button variant="outline-primary" onClick={() => setShowMenu(true)}>
           Menu
         </Button>
+
         <Offcanvas
           show={showMenu}
           onHide={() => setShowMenu(false)}
