@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "functions": [
     {
       "source": "functions",
@@ -17,10 +18,13 @@
   "database": {
     "rules": "database.rules.json"
   },
+=======
+>>>>>>> 18ef74f878b5400f344e8e8bc7e1a3063c886c2e
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
+<<<<<<< HEAD
   "hosting": {
     "source": ".",
     "ignore": [
@@ -28,10 +32,32 @@
       "**/.*",
       "**/node_modules/**"
     ],
+=======
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "hosting": {
+    "public": "output",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "remoteconfig": {
+      "template": "remoteconfig.template.json",
+      "extensions": {}
+    },
+>>>>>>> 18ef74f878b5400f344e8e8bc7e1a3063c886c2e
     "frameworksBackend": {
       "region": "us-central1"
     }
   },
+<<<<<<< HEAD
   "storage": {
     "rules": "storage.rules"
   },
@@ -42,4 +68,22 @@
     "template": "remoteconfig.template.json"
   },
   "extensions": {}
+=======
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "database": {
+      "port": 9000
+    },
+    "singleProjectMode": true,
+    "hosting": {
+      "port": 5000,
+      "host": "localhost"
+    }
+  }
+>>>>>>> 18ef74f878b5400f344e8e8bc7e1a3063c886c2e
 }

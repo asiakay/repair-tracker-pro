@@ -1,7 +1,12 @@
 {
   "projects": {
     "default": "repair-tracker-pro"
+<<<<<<< HEAD
   },
   "targets": {},
   "etags": {}
 }
+=======
+  }
+}
+>>>>>>> 18ef74f878b5400f344e8e8bc7e1a3063c886c2e

@@ -33,3 +33,9 @@ yarn-error.log*
 .vercel
 node_modules
 
+ui-debug.log*
+database-debug.log*
+firestore-debug.log*
+
+# vercel
+.vercel

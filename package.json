@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "repair-tracker-pro",
+=======
+  "name": "my-repair-tracker-pro",
+>>>>>>> 18ef74f878b5400f344e8e8bc7e1a3063c886c2e
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,11 +13,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
     "firebase": "^9.21.0",
     "next": "13.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+=======
+    "@next/env": "^13.4.0",
+    "bootstrap": "^5.2.3",
+    "dotenv": "^16.0.3",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.4.0",
+    "firebase": "^9.21.0",
+    "next": "13.4.0",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-datepicker": "^4.11.0",
+    "react-dom": "18.2.0",
+    "react-google-charts": "^4.0.0",
+    "react-icons": "^4.8.0"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1"
+>>>>>>> 18ef74f878b5400f344e8e8bc7e1a3063c886c2e
   }
 }

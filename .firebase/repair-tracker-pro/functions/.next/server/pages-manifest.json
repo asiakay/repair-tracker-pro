@@ -1,0 +1,14 @@
+{
+  "/_document": "pages/_document.js",
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/register": "pages/register.html",
+  "/new-repair-request": "pages/new-repair-request.html",
+  "/api/hello": "pages/api/hello.js",
+  "/repair-list": "pages/repair-list.html",
+  "/settings": "pages/settings.html",
+  "/status": "pages/status.html",
+  "/404": "pages/404.html"
+}

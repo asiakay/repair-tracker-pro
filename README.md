@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+
+![](https://user-images.githubusercontent.com/66960776/236655190-48defd56-e03c-4b7f-b9c1-f62255bcdf1e.jpg)
+
+>>>>>>> 18ef74f878b5400f344e8e8bc7e1a3063c886c2e
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -14,7 +20,11 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+<<<<<<< HEAD
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+=======
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+>>>>>>> 18ef74f878b5400f344e8e8bc7e1a3063c886c2e
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 

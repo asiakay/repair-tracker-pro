@@ -1,0 +1,41 @@
+.repair-list {
+  margin-top: 2rem;
+}
+
+.repair-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.repair-item-image {
+  margin-right: 1rem;
+}
+
+.repair-item-details h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.repair-item-details p {
+  margin: 0;
+}
+
+.repair-item-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.repair-item-info span {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
